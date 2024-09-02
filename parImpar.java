@@ -1,0 +1,3 @@
+class ParImpar{
+    Mai
+}
