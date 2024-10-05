@@ -1,49 +1,50 @@
 public class TV {
-    private int channel;
-    private int volume;
-    private boolean on;
+    int channel;
+    int volume;
+    boolean on;
 
     TV(){
         channel = 1;
-        volume = 0;
+        volume = 1;
         on = false;
     }
-    //tv
 
     public void turnOn(){
-        this.on = true;
-        System.out.println("TV ON");
+        on = true;
     }
 
     public void turnOff(){
-        this.on = false;
-        System.out.println("TV OFF");
+        on = false;
     }
 
-    public void setChannel(int channel){
-        this.channel = channel;
-        System.out.println("Channel = " + channel);
+    public void setChannel(int newChannel){
+        if (on && newChannel >= 1 && newChannel <= 120)
+            this.channel = newChannel;
     }
 
-    public void setVolume(int volume){
-        this.volume = volume;
-        System.out.println("Volume = " + volume);
+    public void setVolume(int newVolume){
+        if (on && newVolume >= 1 && newVolume <= 7)
+            this.volume = volume;
     }
 
     public void channelUp(){
-        channel++;
+        if (on && channel < 120)
+            channel++;
     }
 
     public void channelDown(){
-        channel--;
+        if (on && channel > 1)
+            channel--;
     }
 
     public void volumeUp(){
-        volume++;
+        if (on && volume < 7)
+            volume++;
     }
 
     public void volumeDown(){
-        volume--;
+        if (on && volume > 1)
+            volume--;
     }
 
 }
